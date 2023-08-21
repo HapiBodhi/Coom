@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ResearchProjectDef>
+    <defName>CoomRefining</defName>
+    <label>coom refining</label>
+    <description>Refine raw coom by placing it in a jar with a wooden figurine.</description>
+    <baseCost>200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>0.40</researchViewY>
+</ResearchProjectDef>
+</Defs>

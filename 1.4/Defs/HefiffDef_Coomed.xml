@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<HediffDef>
+    <defName>RawCoomHigh</defName>
+    <label>raw coom high</label>
+    <labelNoun>Poisoned with raw coom</labelNoun>
+    <description>This person has ingested raw coom. They are currently regretting it, but have increased damage resistance and pain tolerance.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <painFactor>0.8</painFactor>
+          <statFactors>
+          <IncomingDamageFactor>0.8</IncomingDamageFactor>
+          </statFactors>
+        </li>
+      </stages>
+</HediffDef>
+
+<HediffDef>
+    <defName>CoomHigh</defName>
+    <label>coom high</label>
+    <labelNoun>High on coom</labelNoun>
+    <description>This person has drank coom. They are more durable, resistant to pain and faster.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <capMods>
+            <li>
+                <capacity>Moving</capacity>
+                <offset>0.3</offset>
+            </li>
+          </capMods>
+          <painFactor>0.6</painFactor>
+          <statFactors>
+          <IncomingDamageFactor>0.7</IncomingDamageFactor>
+          </statFactors>
+        </li>
+      </stages>
+</HediffDef>
+
+<ThoughtDef>
+<defName>RawCoom</defName>
+<workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>RawCoomHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>ingested raw coom</label>
+        <description>Ugh, so thick and salty!</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+<ChemicalDef>
+    <defName>Coom</defName>
+    <label>coom</label>
+    <addictionHediff>coomAddiction</addictionHediff>
+    <generateAddictionGenes>false</generateAddictionGenes>
+  </ChemicalDef>
+
+<NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Chemical_coom</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>coom</label>
+    <description>Because of an coom addiction, this person needs to regularly consume coom to avoid withdrawal symptoms.</description>
+    <listPriority>20</listPriority>
+</NeedDef>
+
+  <HediffDef ParentName="AddictionBase">
+    <defName>coomAddiction</defName>
+    <label>coom addiction</label>
+    <description>A chemical addiction to coom. Long-term presence of coom has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+        \nWithout regular doses of coom, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>Chemical_coom</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.1</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>withdrawal</label>
+      </li>
+    </stages>
+  </HediffDef>
+  </Defs>

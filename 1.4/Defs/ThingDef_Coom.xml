@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--Raw coom-->
+<ThingDef ParentName="DrugBase">
+<defName>RawCoom</defName>
+<label>Raw coom</label>
+<description>Raw coom harvested from a coomalope. Tastes horrible, but still provides some of the substance's strengthened effects.</description>
+<descriptionHyperlinks>
+      <HediffDef>RawCoomHigh</HediffDef>
+</descriptionHyperlinks>
+<graphicData>
+    <texPath>rawcoom</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+</graphicData>
+<rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>10</MarketValue>
+      <Mass>0.05</Mass>
+      <DeteriorationRate>6</DeteriorationRate>
+      <Nutrition>0.01</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.1</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <ingestible>
+      <baseIngestTicks>210</baseIngestTicks>
+      <foodType>AnimalProduct, Fluid</foodType>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Puff</ingestSound>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.18,0,0)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Chug {0}</ingestCommandString>
+      <ingestReportString>Chugging {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RawCoomHigh</hediffDef>
+          <severity>0.8</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <thingCategories>
+      <li>AnimalProductRaw</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Coom</chemical>
+        <addictiveness>0</addictiveness>
+        <existingAddictionSeverityOffset>0</existingAddictionSeverityOffset>
+        <needLevelOffset>0</needLevelOffset>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>720</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.005</largeOverdoseChance>
+      </li>
+    </comps>
+</ThingDef>
+
+<ThingDef ParentName="MakeableDrugBase">
+    <defName>Coom</defName>
+    <label>coom</label>
+    <description>Refined coom. A figurine strategically placed at the base of the container enhances the coom's effects and improves the taste.</description>
+    <descriptionHyperlinks>
+      <HediffDef>CoomHigh</HediffDef>
+</descriptionHyperlinks>
+    <graphicData>
+        <texPath>coom</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+        <WorkToMake>400</WorkToMake>
+        <MarketValue>10</MarketValue>
+        <Mass>0.05</Mass>
+        <DeteriorationRate>6</DeteriorationRate>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <foodType>Fluid, Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.40</joy>
+      <baseIngestTicks>210</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <ingestSound>Ingest_Puff</ingestSound>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.18,0,0)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Chug {0}</ingestCommandString>
+      <ingestReportString>Chugging {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+            <hediffDef>CoomHigh</hediffDef>
+            <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+        <researchPrerequisite>CoomRefining</researchPrerequisite>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <soundWorking>Recipe_Drug</soundWorking>
+    </recipeMaker>
+    <costList>
+        <RawCoom>5</RawCoom>
+        <WoodLog>5</WoodLog>
+        <Steel>10</Steel>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Coom</chemical>
+        <addictiveness>0</addictiveness>
+        <existingAddictionSeverityOffset>0</existingAddictionSeverityOffset>
+        <needLevelOffset>0</needLevelOffset>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>730</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.005</largeOverdoseChance>
+      </li>
+    </comps>
+</ThingDef>
+</Defs>
