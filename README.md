@@ -1,2 +1,3 @@
 # Coom
-Adds coom, a mythical new substance from the majestic coomalope
+Adds coom, a mythical new substance from the majestic coomalope.
+Milk the newly added coomalope to get raw coom. Process this into coom at the drug lab and you're good to go!
