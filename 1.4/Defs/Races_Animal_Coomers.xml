@@ -22,10 +22,10 @@
     </comps>
     <race>
       <wildBiomes>
-        <BorealForest>0.5</BorealForest>
-        <Tundra>0.3</Tundra>
-        <TemperateForest>0.5</TemperateForest>
-        <TropicalRainforest>0.1</TropicalRainforest>
+		<BorealForest>0.5</BorealForest>
+		<Tundra>0.3</Tundra>
+		<TemperateForest>0.5</TemperateForest>
+		<TropicalRainforest>0.1</TropicalRainforest>
       </wildBiomes>
       <body>QuadrupedAnimalWithHoovesAndHump</body>
       <executionRange>6</executionRange>
